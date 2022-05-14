@@ -7,8 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     // Login form
-    @RequestMapping("/index.html")
+    @RequestMapping({ "/index.html", "/" })
     public String home() {
         return "index.html";
+    }
+
+    // Login form
+    @RequestMapping("/portfolio-details.html")
+    public String details() {
+        return "portfolio-details.html";
+    }
+
+    @RequestMapping("/cart")
+    public String cart() {
+        return "shopping-cart.html";
     }
 }

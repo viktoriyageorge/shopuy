@@ -5,17 +5,18 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Reveal Bootstrap Template</title>
+    <title>Shopuy</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/Shopuy.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
-          rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+            rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -50,29 +51,12 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li><a class="nav-link scrollto " href="/cart">My shopping cart</a></li>
+                <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
+                <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+                <li><a class="nav-link scrollto" href="/registration">Sign up</a></li>
+                <li><a class="nav-link scrollto active" href="/login">Login</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -86,19 +70,17 @@
     <section id="portfolio" class="portfolio">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>Our Portfolio</h2>
-                <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam
-                    enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum
-                    velit export irure minim illum fore</p>
+                <h2>Our Suggestions</h2>
+                <p>We offer you the best of brands around the world. A collection of the most famous brands in one
+                    place. Only here and now you can take advantage ... What are you waiting for? Shop .. buy .. in
+                    Shop<span>uy</span>!</p>
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
+                        <li data-filter=".filter-app">Available</li>
                     </ul>
                 </div>
             </div>
@@ -106,14 +88,14 @@
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                    <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                       class="portfolio-lightbox preview-link" title="App 1">
+                        <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></a>
                     <div class="portfolio-info">
                         <h4>App 1</h4>
                         <p>App</p>
-                        <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                           class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                         <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                class="bx bx-link"></i></a>
+                                class="bx bx-right-arrow-circle"></i></a>
                     </div>
                 </div>
 
@@ -222,10 +204,8 @@
     <section id="clients">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>Clients</h2>
-                <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam
-                    enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum
-                    velit export irure minim illum fore</p>
+                <h2>Our Brands</h2>
+                <p>This is the list of brands that have trusted to sell with us</p>
             </div>
 
             <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -249,34 +229,38 @@
     <section id="contact">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam
-                    enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum
-                    velit export irure minim illum fore</p>
+                <h2>About Us</h2>
+                <p>This is a project on Software Systems based on services in the Master's program "Software
+                    Technologies" at FMI at Sofia University</p>
             </div>
 
             <div class="row contact-info">
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="contact-address">
-                        <i class="bi bi-geo-alt"></i>
-                        <h3>Address</h3>
-                        <address>A108 Adam Street, NY 535022, USA</address>
+                        <h3>2MI3400124</h3>
+                        <p>Viktoriya Georgieva, <a href="mailto:viktoriyageorge@gmail.com">viktoriyageorge@gmail.com</a>
+                        </p>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="contact-phone">
-                        <i class="bi bi-phone"></i>
-                        <h3>Phone Number</h3>
+                        <h3>xMIxxxxxxx</h3>
                         <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="contact-email">
-                        <i class="bi bi-envelope"></i>
-                        <h3>Email</h3>
+                        <h3>xMIxxxxxxx</h3>
+                        <p><a href="mailto:info@example.com">info@example.com</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="contact-email">
+                        <h3>xMIxxxxxxx</h3>
                         <p><a href="mailto:info@example.com">info@example.com</a></p>
                     </div>
                 </div>
@@ -284,46 +268,6 @@
             </div>
         </div>
 
-        <div class="container mb-4">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
-                    width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-
-        <div class="container">
-            <div class="form">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                   required>
-                        </div>
-                        <div class="form-group col-md-6 mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                               required>
-                    </div>
-                    <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                                  required></textarea>
-                    </div>
-
-                    <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit">Send Message</button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
     </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
@@ -340,7 +284,7 @@
             You can delete the links only if you purchased the pro version.
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Reveal
-          -->
+            -->
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
     </div>

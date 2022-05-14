@@ -3,11 +3,40 @@
 <head>
     <title>Error page</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="css/main.css" th:href="@{/css/main.css}"/>
+
+    <!-- Favicons -->
+    <link href="assets/img/Shopuy.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+            rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/error.css" rel="stylesheet">
+
 </head>
-<body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}">
-<h1 th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
-<p th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
-<a href="index.html" th:href="@{/index.html}">Back to Home Page</a>
+<!--th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}"-->
+<body>
+<div>
+    <aside><img src="assets/img/mirror.png" alt="404 Image"/>
+    </aside>
+    <main>
+        <h1>Sorry!</h1>
+        <p>
+            Oops! Looks like you got <em>. . . lost.</em>
+        </p>
+        <button><a th:href="@{/}">Take me back!</a></button>
+    </main>
+</div>
 </body>
 </html>

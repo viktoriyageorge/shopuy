@@ -65,20 +65,39 @@
                 <div class="login-form">
                     <p th:if="${loginError}" class="error">Wrong user or password</p>
 
-                    <form th:action="@{/login.html}" method="post">
+                    <form th:action="@{/register}" method="post" th:object="${user}">
                         <div class="content">
                             <div class="input-field">
-                                <input type="text" id="username" name="username" placeholder="Username"
-                                       autofocus="autofocus">
+                                <input type="text" id="username" name="username" placeholder="Email"
+                                       autofocus="autofocus" th:field="*{email}">
                             </div>
                             <div class="input-field">
                                 <input type="password" id="password" name="password" placeholder="Password"
-                                       autocomplete="new-password">
+                                       autocomplete="new-password" th:field="*{password}">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="firstname" name="firstname" placeholder="First name"
+                                       autofocus="autofocus" th:field="*{firstName}">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="lastname" name="lastname" placeholder="Last name"
+                                       autofocus="autofocus" th:field="*{lastName}">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="address" name="address" placeholder="Delivery address"
+                                       autofocus="autofocus" th:field="*{address}">
+                            </div>
+                            <div class="input-field">
+                                <input type="tel" id="telephone" name="telephone" placeholder="Phone number"
+                                       autofocus="autofocus" th:field="*{telephone}">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="bankid" name="bankid" placeholder="Bank id"
+                                       autofocus="autofocus" th:field="*{bankId}">
                             </div>
                         </div>
                         <div class="action">
-                            <button th:href="@{/registration}">Sign up</button>
-                            <button type="submit">Login</button>
+                            <button type="submit">Sign up</button>
                         </div>
                     </form>
                 </div>

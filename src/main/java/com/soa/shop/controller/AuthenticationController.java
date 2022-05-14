@@ -13,6 +13,13 @@ public class AuthenticationController {
         return "login.html";
     }
 
+
+    @RequestMapping("/logout")
+    public String logout() {
+
+        return "index.html";
+    }
+
     // Login form with error
     @RequestMapping("/login-error.html")
     public String loginError(Model model) {

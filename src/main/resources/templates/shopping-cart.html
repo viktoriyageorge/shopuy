@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Product Details</title>
+    <title>Shopping cart</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -27,15 +26,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-    * Template Name: Reveal - v4.7.0
-    * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
 </head>
-
 <body>
 
 <!-- ======= Header ======= -->
@@ -51,7 +42,7 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto " href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="/cart">My shopping cart</a></li>
+                <li><a class="nav-link scrollto active" href="/cart">My shopping cart</a></li>
                 <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
                 <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
                 <li><a class="nav-link scrollto" href="/registration">Sign up</a></li>
@@ -72,47 +63,61 @@
         <div class="container">
 
             <div class="section-header">
-                <h2>Product name</h2>
+                <h2>Shopping Bag</h2>
             </div>
             <div class="row gy-4">
 
-                <div class="col-lg-8">
-                    <div class="portfolio-details-slider swiper">
-                        <div class="swiper-wrapper align-items-center">
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="swiper-pagination"></div>
+                <div class="row">
+                    <div class="buttons col-lg-2">
+                        <i class="bi-trash-fill"></i>
+                        <i class="bi-heart-fill"></i>
                     </div>
+
+                    <div class="image col-lg-2">
+                        <img src="/assets/img/item-1.png" alt=""/>
+                    </div>
+
+                    <div class="description col-lg-6">
+                        <span class="row">Product name</span>
+                        <span class="row">Short description</span>
+                    </div>
+
+                    <div class="total-price col-lg-1">$549</div>
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="portfolio-info">
-                        <h3>Product information</h3>
-                        <ul>
-                            <li><strong>Type</strong>: Dress</li>
-                            <li><strong>Brand</strong>: Gucci</li>
-                            <li><strong>Collection date</strong>: 01 March, 2020</li>
-                        </ul>
+                <div class="row">
+                    <div class="buttons col-lg-2">
+                        <i class="bi-trash-fill"></i>
+                        <i class="bi-heart-fill"></i>
                     </div>
-                    <div class="portfolio-description">
-                        <h2>Product description</h2>
-                        <p>
-                            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore
-                            quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim.
-                        </p>
+
+                    <div class="image col-lg-2">
+                        <img src="/assets/img/item-2.png" alt=""/>
                     </div>
+
+                    <div class="description col-lg-6">
+                        <span class="row">Product name</span>
+                        <span class="row">Short description</span>
+                    </div>
+
+                    <div class="total-price col-lg-1">$549</div>
+                </div>
+                <div class="row">
+                    <div class="buttons col-lg-2">
+                        <i class="bi-trash-fill"></i>
+                        <i class="bi-heart-fill"></i>
+                    </div>
+
+                    <div class="image col-lg-2">
+                        <img src="/assets/img/item-3.png" alt=""/>
+                    </div>
+
+                    <div class="description col-lg-6">
+                        <span class="row">Product name</span>
+                        <span class="row">Short description</span>
+                    </div>
+
+                    <div class="total-price col-lg-1">$549</div>
                 </div>
 
             </div>
@@ -154,6 +159,6 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
-</body>
 
+</body>
 </html>
