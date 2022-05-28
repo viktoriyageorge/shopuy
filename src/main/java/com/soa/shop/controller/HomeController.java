@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     // Login form
-    @RequestMapping({ "/index.html", "/" })
+    @RequestMapping({ "/index.html","/home", "/" })
     public String home() {
         return "index.html";
     }
