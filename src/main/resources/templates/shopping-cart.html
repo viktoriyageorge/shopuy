@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -34,19 +34,17 @@
     <div class="container d-flex justify-content-between">
 
         <div id="logo">
-            <h1><a href="index.html">Shop<span>uy</span></a></h1>
+            <h1><a href="/">Shop<span>uy</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
         </div>
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto " href="/">Home</a></li>
-                <li><a class="nav-link scrollto active" href="/cart">My shopping cart</a></li>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li><a class="nav-link scrollto " href="/cart">My shopping cart</a></li>
                 <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
                 <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
-                <li><a class="nav-link scrollto" href="/registration">Sign up</a></li>
-                <li><a class="nav-link scrollto " href="/login">Login</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -67,58 +65,54 @@
             </div>
             <div class="row gy-4">
 
-                <div class="row">
-                    <div class="buttons col-lg-2">
+                <div class="input-field" th:if="${error != null}">
+                    <span th:text="${error}"></span>
+                </div>
+
+                <div class="row" th:each="product : ${products}">
+                    <div class="buttons col-lg-2" th:onclick="|window.location.href='/remove?id=${product.productId}'|">
                         <i class="bi-trash-fill"></i>
-                        <i class="bi-heart-fill"></i>
                     </div>
 
                     <div class="image col-lg-2">
-                        <img src="/assets/img/item-1.png" alt=""/>
+                        <img th:src="${product.photo}" th:width="150" th:height="100" alt="" th:class="img-responsive"/>
                     </div>
 
                     <div class="description col-lg-6">
-                        <span class="row">Product name</span>
-                        <span class="row">Short description</span>
+                        <span class="row" th:text="${product.productName}"></span>
                     </div>
 
-                    <div class="total-price col-lg-1">$549</div>
+                    <div class="total-price col-lg-1" th:text="'$ ' + ${product.price}"></div>
                 </div>
 
                 <div class="row">
                     <div class="buttons col-lg-2">
-                        <i class="bi-trash-fill"></i>
-                        <i class="bi-heart-fill"></i>
                     </div>
 
                     <div class="image col-lg-2">
-                        <img src="/assets/img/item-2.png" alt=""/>
                     </div>
 
                     <div class="description col-lg-6">
-                        <span class="row">Product name</span>
-                        <span class="row">Short description</span>
+                        <span class="row">Total price: </span>
                     </div>
 
-                    <div class="total-price col-lg-1">$549</div>
+                    <div class="total-price col-lg-1" th:text="'$ ' + ${totalPrice}"  th:if="${products.size} > 0"></div>
                 </div>
-                <div class="row">
+
+                <div class="row" th:if="${products.size} > 0">
                     <div class="buttons col-lg-2">
-                        <i class="bi-trash-fill"></i>
-                        <i class="bi-heart-fill"></i>
                     </div>
 
                     <div class="image col-lg-2">
-                        <img src="/assets/img/item-3.png" alt=""/>
                     </div>
 
                     <div class="description col-lg-6">
-                        <span class="row">Product name</span>
-                        <span class="row">Short description</span>
+                        <button type="submit" th:onclick="|window.location.href='/buy'|">Buy</button>
                     </div>
 
-                    <div class="total-price col-lg-1">$549</div>
+                    <div class="total-price col-lg-1"></div>
                 </div>
+
 
             </div>
 

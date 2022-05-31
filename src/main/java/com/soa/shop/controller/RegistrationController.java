@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.soa.shop.model.UserProfile;
 import com.soa.shop.service.UserProfileService;
@@ -26,10 +25,14 @@ public class RegistrationController {
         return "registration.html";
     }
 
-    @PostMapping(value = "/register")
+    @PostMapping(value = "/registration")
     public String register(@ModelAttribute("user") UserProfile user, Model model) {
         log.info("saving user:::" + user.getFirstName());
-        userProfileService.save(user);
-        return "login.html";
+        if (userProfileService.save(user)) {
+            return "redirect:/login";
+        } else {
+            model.addAttribute("error","Incorrect fields");
+            return "registration.html";
+        }
     }
 }

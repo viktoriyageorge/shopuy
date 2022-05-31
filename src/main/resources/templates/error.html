@@ -33,7 +33,7 @@
     <main>
         <h1>Sorry!</h1>
         <p>
-            Oops! Looks like you got <em>. . . lost.</em>
+            Oops! Looks like you got <em>. . . </em><em th:text="${errorMessage} ?: 'lost.'"></em>
         </p>
         <button><a th:href="@{/}">Take me back!</a></button>
     </main>

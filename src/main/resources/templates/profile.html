@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Login</title>
+    <title>Profile</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -44,9 +44,10 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="/registration">Sign up</a></li>
-                <li><a class="nav-link scrollto active" href="/login">Login</a></li>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li><a class="nav-link scrollto " href="/cart">My shopping cart</a></li>
+                <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
+                <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -61,26 +62,25 @@
 
         <div class="container">
             <div class="row gy-4">
+                <div class="profile" th:object="${user}">
+                    <header>
+                        <h1 th:text="*{firstName}"></h1>
+                    </header>
+                    <main>
+                        <dl>
+                            <dt>Email/Username</dt>
+                            <dd th:text="*{email}"></dd>
+                            <dt>Full name</dt>
+                            <dd th:text="*{firstName} + ' ' + *{lastName}"></dd>
+                            <dt>Address</dt>
+                            <dd th:text="*{address}"></dd>
+                            <dt>Phone</dt>
+                            <dd th:text="*{telephone}"></dd>
+                            <dt>Bank Account ID</dt>
+                            <dd th:text="*{bankId}"></dd>
+                        </dl>
+                    </main>
 
-                <div class="login-form">
-                    <p th:if="${loginError}" class="error">Wrong user or password</p>
-
-                    <form th:action="@{/login}" method="post">
-                        <div class="content">
-                            <div class="input-field">
-                                <input type="text" id="username" name="username" placeholder="Username"
-                                       autofocus="autofocus">
-                            </div>
-                            <div class="input-field">
-                                <input type="password" id="password" name="password" placeholder="Password"
-                                       autocomplete="new-password">
-                            </div>
-                        </div>
-                        <div class="action">
-                            <button th:href="@{/registration}">Sign up</button>
-                            <button type="submit">Login</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

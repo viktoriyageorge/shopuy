@@ -1392,3 +1392,20 @@ section {
 .login-form .action button:nth-child(2):hover {
     background: #384c86;
 }
+
+button {
+    font-family: "Fontdiner Swanky", cursive;
+    font-size: 1rem;
+    color: #383838;
+    border: none;
+    background-color: #50d8af;
+    padding: 1rem 2.5rem;
+    transform: skew(-5deg);
+    transition: all 0.1s ease;
+}
+
+button:hover {
+    background-color: #50D8AF;
+    transform: scale(1.15);
+}
+

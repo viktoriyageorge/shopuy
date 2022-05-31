@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -26,7 +26,7 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
 
     <!-- =======================================================
     * Template Name: Reveal - v4.7.0
@@ -43,19 +43,19 @@
     <div class="container d-flex justify-content-between">
 
         <div id="logo">
-            <h1><a href="index.html">Shop<span>uy</span></a></h1>
+            <h1><a href="/">Shop<span>uy</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
         </div>
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto " href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="/cart">My shopping cart</a></li>
-                <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
-                <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
-                <li><a class="nav-link scrollto" href="/registration">Sign up</a></li>
-                <li><a class="nav-link scrollto " href="/login">Login</a></li>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li><a class="nav-link scrollto " href="/cart" th:if="${isLoggedUser}">My shopping cart</a></li>
+                <li><a class="nav-link scrollto" href="/profile" th:if="${isLoggedUser}">Profile</a></li>
+                <li><a class="nav-link scrollto" th:href="@{/logout}" th:if="${isLoggedUser}">Logout</a></li>
+                <li><a class="nav-link scrollto" href="/registration" th:if="${!isLoggedUser}">Sign up</a></li>
+                <li><a class="nav-link scrollto active" href="/login" th:if="${!isLoggedUser}">Login</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -65,56 +65,36 @@
 
 <main id="main">
 
-
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
 
         <div class="container">
 
-            <div class="section-header">
-                <h2>Product name</h2>
-            </div>
+
             <div class="row gy-4">
 
-                <div class="col-lg-8">
-                    <div class="portfolio-details-slider swiper">
-                        <div class="swiper-wrapper align-items-center">
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
+                <div class="section-header">
+                    <h2 th:text="${product.productName}"></h2>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="portfolio-info">
                         <h3>Product information</h3>
                         <ul>
-                            <li><strong>Type</strong>: Dress</li>
-                            <li><strong>Brand</strong>: Gucci</li>
-                            <li><strong>Price</strong>: 50$</li>
+                            <li><strong>Price</strong><span th:text="' : $ ' + ${product.price}"></span></li>
+                            <li><strong>Quantity</strong><span th:text="' : ' + ${product.quantity}"></span></li>
                         </ul>
                     </div>
                     <div class="portfolio-description">
                         <h2>Product description</h2>
-                        <p>
-                            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore
-                            quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim.
-                        </p>
+                        <p th:text="${product.description}"></p>
                     </div>
                 </div>
 
+
+                <div class="description col-lg-6" th:if="${isLoggedUser}">
+                    <button type="submit" th:onclick="|window.location.href='/add?id=${product.productId}'|">Add to cart</button>
+                </div>
             </div>
 
         </div>
