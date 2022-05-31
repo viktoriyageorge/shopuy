@@ -23,9 +23,6 @@ public class HomeController {
     private UserProfileService userProfileService;
 
     @Autowired
-    private UserCartService userCartService;
-
-    @Autowired
     private ProductService productService;
 
     @RequestMapping({ "/index.html", "/home", "/" })
@@ -44,39 +41,6 @@ public class HomeController {
         model.addAttribute("isLoggedUser", principal != null && StringUtils.hasText(principal.getName()));
         model.addAttribute("product", product);
         return "portfolio-details.html";
-    }
-
-    @RequestMapping("/cart")
-    public String cart(Model model, Principal principal) {
-        model.addAttribute("products", userCartService.getProducts(principal == null ? "" : principal.getName()));
-        model.addAttribute("totalPrice",
-                String.format("%.2f", userCartService.getTotalPrice(principal == null ? "" : principal.getName())));
-        return "shopping-cart.html";
-    }
-
-    @RequestMapping("/buy")
-    public String buyProduct(Model model, Principal principal) {
-        String response = userCartService.buyProducts(principal == null ? "" : principal.getName());
-        if (StringUtils.hasText(response)) {
-            model.addAttribute("error", response);
-            model.addAttribute("totalPrice",
-                    String.format("%.2f", userCartService.getTotalPrice(principal == null ? "" : principal.getName())));
-            return "shopping-cart.html";
-        }
-        return "redirect:/cart";
-    }
-
-    @RequestMapping("/remove")
-    public String removeProduct(Model model, @RequestParam("id") Integer productId, Principal principal) {
-        userCartService.removeProductFromCart(principal == null ? "" : principal.getName(), productId);
-        model.addAttribute("products", ProductService.products);
-        return "redirect:/cart";
-    }
-
-    @RequestMapping("/add")
-    public String addProduct(Model model, @RequestParam("id") Integer productId, Principal principal) {
-        userCartService.addProductToCart(principal == null ? "" : principal.getName(), productId);
-        return "redirect:/cart";
     }
 
     @RequestMapping("/profile")

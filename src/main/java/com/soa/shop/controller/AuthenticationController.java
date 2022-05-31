@@ -20,7 +20,7 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = {"/logout"})
-    public String logoutDo(HttpServletRequest request, HttpServletResponse response){
+    public String logout(HttpServletRequest request, HttpServletResponse response){
         HttpSession session= request.getSession(false);
         SecurityContextHolder.clearContext();
         session= request.getSession(false);
