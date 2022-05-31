@@ -8,16 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.soa.shop.model.ProductDto;
 import com.soa.shop.model.UserProfile;
 import com.soa.shop.service.ProductService;
-import com.soa.shop.service.UserCartService;
 import com.soa.shop.service.UserProfileService;
 
 @Controller
-public class HomeController {
+public class MainController {
 
     @Autowired
     private UserProfileService userProfileService;
